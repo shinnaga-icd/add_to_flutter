@@ -1,0 +1,14 @@
+
+# FVM Version Cache
+.fvm/
+
+.dart_tool/*
+.idea/*
+build/
+modules/ios/*
+modules/android/*
+/.dart_tool/
+
+
+android/.idea/*
+android/app/libs/*
