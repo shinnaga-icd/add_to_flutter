@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:infcurion_plugin/infcurion_plugin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text('launch SDK'),
             ),
             const Spacer(flex: 1),
+            ElevatedButton(
+              onPressed: launchPlugin,
+              child: const Text('launch Plugin'),
+            ),
+            const Spacer(flex: 1),
           ],
         ),
       ),
@@ -79,4 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('com.example.infcurion_sdk/launch');
 
   void launchSDK() async => await platform.invokeMethod('launchSDK');
+  // void launchPackage() async => Navigator.of(context)
+  //     .push(MaterialPageRoute(builder: (_) => const WalletApp()));
+  void launchPlugin() async {
+    final infcurionPlugin = InfcurionPlugin();
+    print("@@@ ${await infcurionPlugin.getPlatformVersion()}");
+  }
 }

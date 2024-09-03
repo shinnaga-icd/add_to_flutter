@@ -12,3 +12,9 @@ modules/android/*
 
 android/.idea/*
 android/app/libs/*
+
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+ios/Flutter/Debug.xcconfig
+ios/Flutter/Release.xcconfig
