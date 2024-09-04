@@ -24,6 +24,9 @@ class InfcurionPlugin: FlutterPlugin, MethodCallHandler {
   override fun onMethodCall(call: MethodCall, result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "launchWalletApp") {
+      //TODO: infcurion_moduleの呼び出し
+      result.success(null)
     } else {
       result.notImplemented()
     }

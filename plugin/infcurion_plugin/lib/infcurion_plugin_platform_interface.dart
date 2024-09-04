@@ -26,4 +26,8 @@ abstract class InfcurionPluginPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> launchWalletApp() {
+    throw UnimplementedError('launchWalletApp() has not been implemented.');
+  }
 }

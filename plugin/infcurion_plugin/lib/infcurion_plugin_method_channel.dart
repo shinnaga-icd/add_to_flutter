@@ -11,7 +11,13 @@ class MethodChannelInfcurionPlugin extends InfcurionPluginPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
+  }
+
+  @override
+  Future<void> launchWalletApp() async {
+    await methodChannel.invokeMethod<String>('launchWalletApp');
   }
 }
