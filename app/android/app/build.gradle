@@ -56,14 +56,3 @@ android {
 flutter {
     source = "../.."
 }
-
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
-
-dependencies {
-    debugImplementation("com.example.infcurion_sdk:flutter_debug:1.0")
-    releaseImplementation("com.example.infcurion_sdk:flutter_release:1.0")
-}

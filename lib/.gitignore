@@ -1,9 +1,6 @@
 
 # FVM Version Cache
-.fvm/
-
-.android/*
+.fvm
 .dart_tool
 .idea
-.ios/*
-build/*
+.vscode

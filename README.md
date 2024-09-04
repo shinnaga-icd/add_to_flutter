@@ -1,10 +1,10 @@
 # About
-Flutter appにFlutter module(SDK)が搭載可能かを検証するリポジトリ
+Flutter appにFlutter library(SDK)が搭載可能かを検証するリポジトリ
 
 - app : Flutter app
     - flutter stable
 
-- sdk : Flutter module(SDK)
+- lib : Flutter Library(SDK)
     - flutter 3.19.3
 
 # How to
@@ -14,8 +14,8 @@ Flutter appにFlutter module(SDK)が搭載可能かを検証するリポジト�
 1. install fvm
 1. fvm install (3.19.3 & stable)
 1. launch
-    (for VScode)
-    launch and please select app/sdk
-    (other)
-    cd app && flutter run
-    cd sdk && flutter run
+
+# confirmation item
+
+1. runZonedGuarded
+    アプリとLibraryでそれぞれrunZonedGuardedを設けていた場合の挙動と回避策の模索

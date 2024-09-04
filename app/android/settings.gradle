@@ -23,18 +23,3 @@ plugins {
 }
 
 include ":app"
-
-dependencyResolutionManagement {
-    repositoriesMode = RepositoriesMode.PREFER_SETTINGS
-    repositories {
-        google()
-        mavenCentral()
-
-        maven {
-            url = uri("../../sdk/build/host/outputs/repo")
-        }
-        maven {
-            url = uri("https://storage.googleapis.com/download.flutter.io")
-        }
-    }
-}

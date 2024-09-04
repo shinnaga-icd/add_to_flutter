@@ -1,34 +1,22 @@
 {
     "version": "0.2.0",
-    "inputs": [
-        {
-            "id": "launch_app",
-            "type": "pickString",
-            "default": "app",
-            "options": [
-                "app",
-                "sdk"
-            ],
-            "description": "実行するappを選択(app/sdk)"
-        }
-    ],
     "configurations": [
         {
             "name": "debug",
-            "cwd": "${input:launch_app}",
+            "cwd": "app",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "profile",
-            "cwd": "${input:launch_app}",
+            "cwd": "app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "release",
-            "cwd": "${input:launch_app}",
+            "cwd": "app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
