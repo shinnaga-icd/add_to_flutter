@@ -1,21 +1,20 @@
-import 'dart:async';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:infcurion_lib/infcurion_lib.dart';
+import 'package:infcurion_lib/screens/main.dart';
 
 void main() {
-  runZonedGuarded(
-    () {
-      runApp(const MyApp());
-    },
-    (_, __) => print('@@@ catch Parent App!!!'),
-  );
+  PlatformDispatcher.instance.onError = (error, _) {
+    debugPrint('Error from App: $error');
+    return true;
+  };
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,21 +40,31 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter Demo Home Page'),
       ),
-      body: const Center(
-        child: Text(
-          'on Click to launch Library',
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          children: <Widget>[
+            const Spacer(),
+            const Text('on Click to launch Library'),
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () async => await raiseError(),
+              child: const Text('raise Error'),
+            ),
+            const Spacer(),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const WalletApp()),
-          );
-        },
+        onPressed: () => launchWalletApp(context),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  raiseError() async {
+    await Future.delayed(const Duration(seconds: 1));
+    throw Exception('Error from App');
   }
 }
